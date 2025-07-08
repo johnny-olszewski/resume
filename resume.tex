@@ -1,20 +1,69 @@
-\documentclass{article}
-\usepackage{xcolor}
+\newcommand{\name}{Johnny Olszewski}
+\newcommand{\hook}{Software Engineer, Marine Veteran}
+\newcommand{\email}{johnny@johnnyo.dev}
 
-% Define custom colors
-\definecolor{myblue}{RGB}{0, 122, 255}
-\definecolor{mygreen}{RGB}{34, 139, 34}
-\definecolor{myred}{RGB}{220, 20, 60}
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabularx} % For two-column layout
+\usepackage{hyperref} % For clickable links
+\usepackage{fontawesome5} % For icons
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[sfdefault]{FiraSans} % Use Fira Sans as the default sans-serif font
+\usepackage{xcolor} % For custom colors
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{makecell}
+\usepackage{tcolorbox}
 
-\newcommand{\name}{\textcolor{myblue}{Johnny Olszewski}}
-\newcommand{\hook}{\textcolor{mygreen}{Software Engineer, Veteran}}
-\newcommand{\email}{\textcolor{myred}{johnolszewskim@gmail.com}}
+% Define a professional blue color
+\definecolor{slateblue}{RGB}{70, 130, 180} % Slate Blue
+\definecolor{navyblue}{RGB}{0, 51, 102} % Navy Blue
+\definecolor{slategrey}{RGB}{64, 64, 64} % Slate Grey
+
+% Macro definition
+\newcommand{\experienceentry}[5]{%
+    \noindent\textbf{#3} \hfill #2\\
+    {\color{slateblue}#1} \hfill \textit{#4}
+    \begin{itemize}[leftmargin=0.2in, itemsep=0.0em, topsep=0.2em]
+        #5
+    \end{itemize}
+    \vspace{0.5em} % Add spacing after each job entry
+}
+
+\renewcommand{\cellalign}{cl}
 
 \begin{document}
 
-% Colorful header
-\textbf{\name} \\ 
-\textit{\hook} \\ 
-You can contact me at: \email.
+\input{header} \\
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}p{0.68\textwidth}@{\hspace{1em}}p{0.3\textwidth}@{}}
+    % Left Column
+    \begin{minipage}[t]{\linewidth}
+        \section*{\Large\MakeUppercase{Professional Experience}}
+        \vspace{-1.5em}
+        \hrulefill \\ [0.5em]
+        \input{experience}
+
+        \section*{\Large\MakeUppercase{Projects}}
+        \vspace{-1.5em}
+        \hrulefill \\
+
+        \input{projects}
+    \end{minipage}
+
+    &
+
+    % Right Column
+
+    \input{education}
+
+    \input{skills}
+    
+    \input{interests}
+
+\end{tabularx}
+
 
 \end{document}
