@@ -1,69 +1,117 @@
 \newcommand{\name}{Johnny Olszewski}
 \newcommand{\hook}{Software Engineer, Marine Veteran}
-\newcommand{\email}{johnny@johnnyo.dev}
+\newcommand{\email}{johnolszewskim@gmail.com}
 
 \documentclass[10pt,letterpaper]{article}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{tabularx} % For two-column layout
-\usepackage{hyperref} % For clickable links
-\usepackage{fontawesome5} % For icons
-\usepackage{tabularx}
+\usepackage[margin=0.6in]{geometry}
 \usepackage{enumitem}
-\usepackage[sfdefault]{FiraSans} % Use Fira Sans as the default sans-serif font
-\usepackage{xcolor} % For custom colors
-\usepackage{graphicx}
-\usepackage{tcolorbox}
-\usepackage{makecell}
-\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[sfdefault]{inter} % Ultra-modern font
+\usepackage{tabularx}
+\usepackage{xcolor}
 
-% Define a professional blue color
-\definecolor{slateblue}{RGB}{70, 130, 180} % Slate Blue
-\definecolor{navyblue}{RGB}{0, 51, 102} % Navy Blue
-\definecolor{slategrey}{RGB}{64, 64, 64} % Slate Grey
+% Remove page numbers
+\pagestyle{empty}
 
-% Macro definition
-\newcommand{\experienceentry}[5]{%
-    \noindent\textbf{#3} \hfill #2\\
-    {\color{slateblue}#1} \hfill \textit{#4}
-    \begin{itemize}[leftmargin=0.2in, itemsep=0.0em, topsep=0.2em]
-        #5
-    \end{itemize}
-    \vspace{0.5em} % Add spacing after each job entry
+% Define colors
+\definecolor{darkgray}{RGB}{80,80,80}
+\definecolor{mediumgray}{RGB}{120,120,120}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black
 }
 
-\renewcommand{\cellalign}{cl}
+% Experience macro with tighter spacing
+\newcommand{\experienceentry}[5]{%
+    \noindent\begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+        \textbf{#1} -- #3 & \textcolor{mediumgray}{#2 | #4}
+    \end{tabularx}
+    \begin{itemize}[leftmargin=0.18in, itemsep=0.05em, topsep=0.05em, parsep=0em]
+        #5
+    \end{itemize}
+    \vspace{0.15em}
+}
+
+% Project macro with tighter spacing
+\newcommand{\projectentry}[2]{%
+    \noindent\textbf{#1}
+    \begin{itemize}[leftmargin=0.18in, itemsep=0.05em, topsep=0.05em, parsep=0em]
+        #2
+    \end{itemize}
+    \vspace{0.1em}
+}
+
+% Section formatting with tighter spacing
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries\color{darkgray}}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{0.25em}{0.1em}
 
 \begin{document}
 
-\input{header} \\
+% Header Section
+\begin{center}
+    \textbf{\Large Johnny Olszewski}\\[0.08em]
+    \textcolor{mediumgray}{Full Stack Software Engineer, Marine Veteran}\\[0.12em]
+    \textcolor{darkgray}{johnolszewskim@gmail.com \textbullet\ (203) 300-0973 \textbullet\ San Diego, CA}\\[0.03em]
+    \textcolor{darkgray}{LinkedIn: johnny-olszewski-m \textbullet\ GitHub: johnolszewskim}
+\end{center}
 
-\noindent
-\begin{tabularx}{\textwidth}{@{}p{0.68\textwidth}@{\hspace{1em}}p{0.3\textwidth}@{}}
-    % Left Column
-    \begin{minipage}[t]{\linewidth}
-        \section*{\Large\MakeUppercase{Professional Experience}}
-        \vspace{-1.5em}
-        \hrulefill \\ [0.5em]
-        \input{experience}
+\vspace{0.2em}
 
-        \section*{\Large\MakeUppercase{Projects}}
-        \vspace{-1.5em}
-        \hrulefill \\
+% Professional Summary
+\section*{PROFESSIONAL SUMMARY}
+Former Marine Officer and Full Stack Engineer, combining military leadership with modern tech expertise. Focused on building secure, scalable solutions through disciplined engineering and rapid learning.
 
-        \input{projects}
-    \end{minipage}
+% Experience Section
+\section*{EXPERIENCE}
 
-    &
+% Experience Module
+\input{experience}
 
-    % Right Column
+% Projects Section
+\section*{PROJECTS}
 
-    \input{education}
+\projectentry{Finance.ai -- Full Stack Data Management Platform}{
+    \item Developed privacy-focused financial data platform using JavaScript, TypeScript, Python, and SQL for secure data publishing and consumption
+    \item Implemented responsive React frontend with modern frameworks, enabling powerful user experiences for financial data management
+    \item Designed RESTful APIs with FastAPI/Python and PostgreSQL database, implementing robust data governance and cloud-based infrastructure management
+}
 
-    \input{skills}
-    
-    \input{interests}
+% Education Section
+\section*{EDUCATION}
 
+\noindent\begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+\textbf{Virginia Tech} -- M.S. Information Technology & \textcolor{mediumgray}{2021 -- 2023}
 \end{tabularx}
+\textcolor{mediumgray}{Software Engineering, Healthcare I.T., Cybersecurity Management}
 
+\vspace{0.08em}
+
+\noindent\begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+\textbf{University of Richmond} -- B.A. Computer Science & \textcolor{mediumgray}{2012 -- 2016}
+\end{tabularx}
+\textcolor{mediumgray}{French Minor}
+
+\vspace{0.12em}
+
+% Skills Section
+\section*{TECHNICAL SKILLS}
+
+\noindent\textbf{Programming Languages:} JavaScript, TypeScript, Python, Java, SQL, Swift\\[0.06em]
+\textbf{Frontend Technologies:} React, React Native, SwiftUI, UIKit, Redux, Material-UI, Tailwind CSS\\[0.06em]
+\textbf{Backend Technologies:} Node.js, FastAPI, Django, RESTful APIs\\[0.06em]
+\textbf{Databases:} PostgreSQL, MySQL, NoSQL (Neo4j, DynamoDB)\\[0.06em]
+\textbf{DevOps \& Tools:} CI/CD, Git, GitHub, JIRA, Agile/Scrum
+
+\vspace{0.12em}
+
+% Certifications Section
+\section*{CERTIFICATIONS}
+
+\noindent\textbf{Security Clearance:} Previously held Secret clearance (U.S. Marine Corps)\\[0.03em]
+\textbf{Private Pilot Certificate} -- FAA (2021) \textbullet\ \textbf{Open Water Diver} -- PADI (2022)
 
 \end{document}
