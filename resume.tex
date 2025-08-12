@@ -1,126 +1,160 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.45in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{tabularx}
 
-% Chicago-style section headers
+% Chicago-style section headers (tighter spacing)
 \titleformat{\section}
   {\large\bfseries\uppercase}
   {}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{*1.5}{*0.5}
+\titlespacing*{\section}{0pt}{*0.6}{*0.1}
+
+% Global spacing tweaks
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\linespread{0.95}
+\setlist[itemize]{leftmargin=0.8em, itemsep=0.05em, topsep=0.05em, parsep=0em, partopsep=0em}
 
 % No page numbers
 \pagenumbering{gobble}
 
-% Template commands
+% Template commands (compact)
 \newcommand{\name}[1]{
   \begin{center}
-    \Huge\textbf{#1}
+    \Large\textbf{#1}
   \end{center}
-  \vspace{-0.5em}
+  \vspace{-0.4em}
   \hrule height 0.4pt width \textwidth
-  \vspace{0.5em}
+  \vspace{0.2em}
 }
+% Single-line contact
 \newcommand{\contact}[3]{
   \begin{center}
-    #1 \\
-    #2 \\
-    #3
+    \small #1 \textbar{} #2 \textbar{} #3
   \end{center}
-  \vspace{-0.5em}
+  \vspace{-0.35em}
   \hrule height 0.4pt width \textwidth
-  \vspace{0.5em}
+  \vspace{0.2em}
 }
+% Compact role block; dates in small caps
 \newcommand{\role}[4]{
-  \begin{center}
-  \textbf{#1} \hfill \textbf{#2} \\
-  \textit{#3} \hfill \textit{#4}
-  \end{center}
+  \noindent\textbf{#1} \hfill \textbf{#2}\\
+  \noindent\textit{#3} \hfill \textsc{#4}
 }
 
 \begin{document}
 
+% Slightly smaller body text
+\small
+
 \name{Johnny Olszewski}
 
-\contact{johnolszewskim@gmail.com \textbar{} (203) 300-0973}{San Diego, CA}{LinkedIn: johnny-olszewski-m \textbar{} GitHub: johnolszewskim}
+\contact{johnolszewskim@gmail.com \textbar{} (203) 300-0973}{San Diego, CA}{LinkedIn: johnny-olszewski-m}
 
-\vspace{-0.5em}
+\vspace{-0.2em}
 \begin{center}
-\textit{Former Marine Officer and Full Stack Engineer, combining military leadership with modern tech expertise. Focused on building secure, scalable solutions through disciplined engineering and rapid learning.}
+\footnotesize \textit{Full Stack Engineer and former Marine aviator. I'm passionate about how we can use technology to enhance our processes and solve problems. I enjoy building secure, dynamic software that is thoughtfully architected and easy to maintain. I want to be part of a high-performing team building something meaningful and impactful.}
 \end{center}
 
 \section{PROFESSIONAL EXPERIENCE}
 
+\vspace{0.4em}
 % ResMed
-\role{ResMed}{San Diego, CA}{Associate iOS Engineer}{March 2024--Present}
-\begin{itemize}[leftmargin=*,nosep]
+\role{Resmed}{San Diego, CA}{Associate iOS Engineer}{March 2024--Present}
+\begin{itemize}
   \item Develop and maintain features impacting 3.5M+ active users while migrating legacy UIKit to SwiftUI.
-  \item Integrate AWS AppSync and implement cloud-native architecture for real-time data sync between mobile clients, ResMed hardware and AWS services.
-  \item Collaborate with cross-functional Agile teams using JIRA for sprint planning, Git for version control, and conduct thorough code reviews to maintain high code quality standards
-  \item Implement secure, scalable solutions following cloud best practices for data publishing and consumption in healthcare technology
+  \item Integrate AWS AppSync, Amplify, GraphQL and implement features for real-time data sync between mobile clients, Resmed hardware and AWS services.
+  \item Utilize Swift Testing/XCTest and Cucumber tests to ensure high code quality standards. Update and maintain GitHub Actions Workflows. Modify tests for Fastlane screenshots.
+  \item Collaborate with cross-functional Agile teams using JIRA for sprint planning, Git/GitHub for version control, and conduct thorough code reviews to maintain high code quality standards.
+  \item Implement secure, scalable solutions following cloud best practices for data publishing and consumption in healthcare technology.
 \end{itemize}
 
+\vspace{0.4em}
 % Prize LLC
-\role{Prize LLC}{Remote (Part-time)}{Founding Software Engineer}{November 2023--May 2024}
-\begin{itemize}[leftmargin=*,nosep]
-  \item Established engineering workflows and CI/CD pipelines using Docker and Kubernetes for container orchestration in cloud environments
-  \item Architected full-stack applications using JavaScript, TypeScript, React, and Node.js with Neo4j database, implementing modern cloud and data management capabilities
-  \item Drove technical decisions for scalable infrastructure management and data governance in startup environment
+\role{Prize LLC}{Remote (Part-time)}{Founding Software Engineer}{November 2023--May 2025}
+\vspace{0.4em}
+\begin{itemize}
+  \item Established engineering workflows and CI/CD pipelines using Docker and Kubernetes for container orchestration in cloud environments.
+  \item Architected full-stack applications using TypeScript, React, and a Django server with Neo4j database.
+  \item Drove technical decisions for scalable infrastructure management and data governance in a startup environment.
 \end{itemize}
 
+\vspace{0.4em}
 % USMC
+\vspace{0.4em}
 \role{United States Marine Corps}{Various Locations}{Captain, F/A-18 Hornet Weapon Systems Officer (WSO), Naval Flight Officer (NFO)}{June 2017--February 2024}
-\begin{itemize}[leftmargin=*,nosep]
-  \item Mastered, managed and employed weapons systems and capabilities of F/A-18D Hornet
-  \item Facilitated qualifications and syllabus completion of replacement aircrew by using operations expertise to manage production as Flight Schedules Officer
-  \item Managed occupational health and safety programs, identified hazards and implement controls as Safety Officer for squadron of over 500 Marines and sailors
+\vspace{0.4em}
+\begin{itemize}
+  \item Mastered, managed and employed weapons systems and capabilities of F/A-18D Hornet.
+  \item Facilitated qualifications and syllabus completion of replacement aircrew by using operations expertise to manage production as Flight Schedules Officer.
+  \item Managed occupational health and safety programs, identified hazards and implemented controls as Safety Officer for squadron of over 500 Marines and sailors.
 \end{itemize}
+
+\vspace{0.4em}
 
 \section{PROJECTS}
 
+\vspace{0.4em}
+{\small
 \noindent\textbf{Finance.ai -- Full Stack Data Management Platform}
-\begin{itemize}[leftmargin=*,nosep]
-  \item Developed privacy-focused financial data platform using JavaScript, TypeScript, Python, and SQL for secure data publishing and consumption
-  \item Implemented responsive React frontend with modern frameworks, enabling powerful user experiences for financial data management
-  \item Designed RESTful APIs with FastAPI/Python and PostgreSQL database, implementing robust data governance and cloud-based infrastructure management
+\vspace{0.4em}
+\begin{itemize}
   \item Develop a privacy-focused personal finance platform enabling secure transaction tracking and budget management through a fast, customizable interface.
   \item \textbf{Front-end:} Build responsive React/TypeScript frontends with Redux Toolkit, Tailwind CSS, and Material-UI, featuring real-time filtering and Supabase integration.
   \item \textbf{Back-end:} Design RESTful APIs with FastAPI/Python and PostgreSQL, implementing modular service-oriented architecture for data management.
+  \item \textbf{Infrastructure \& DevOps:} Deploy to Google Cloud Run and Cloudflare. Implement CI/CD pipelines using GitHub Actions and Docker.
 \end{itemize}
+}
 
+\vspace{0.4em}
 \section{EDUCATION}
+\vspace{0.4em}
 
-\role{Virginia Tech}{}{M.S. Information Technology}{2021--2023}
-\begin{itemize}[leftmargin=*,nosep]
-  \item Software Engineering, Healthcare I.T., Cybersecurity Management
-\end{itemize}
+% Left-aligned schools with small-caps dates
+\vspace{0.4em}
+{\small
+\noindent\textbf{Virginia Tech} \hfill \textsc{2021--2023}\\
+M.S. Information Technology\\
+Software Engineering, Healthcare I.T., Cybersecurity Management
 
-\role{University of Richmond}{}{B.A. Computer Science}{2012--2016}
-\begin{itemize}[leftmargin=*,nosep]
-  \item French Minor
-\end{itemize}
+\vspace{0.4em}
+
+\noindent\textbf{University of Richmond} \hfill \textsc{2012--2016}\\
+B.A. Computer Science\\
+French Minor
+}
+\vspace{0.4em}
 
 \section{SKILLS}
 
-\begin{itemize}[leftmargin=*,nosep]
+\vspace{0.4em}
+{\small
+\vspace{0.4em}
+\begin{itemize}
   \item \textbf{Programming Languages:} JavaScript, TypeScript, Python, Java, SQL, Swift
   \item \textbf{Frontend Technologies:} React, React Native, SwiftUI, UIKit, Next.js, Redux, Material-UI, Tailwind CSS
   \item \textbf{Backend Technologies:} Node.js, FastAPI, Django, RESTful APIs
   \item \textbf{Databases:} PostgreSQL, MySQL, NoSQL (Neo4j, DynamoDB)
   \item \textbf{DevOps \& Tools:} CI/CD, Git, GitHub, JIRA, Agile/Scrum
 \end{itemize}
+}
 
+\vspace{0.4em}
 \section{CERTIFICATIONS}
 
-\begin{itemize}[leftmargin=*,nosep]
+\vspace{0.4em}
+{\small
+\begin{itemize}
   \item \textbf{Security Clearance:} Previously held Secret clearance (U.S. Marine Corps)
   \item \textbf{Private Pilot Certificate} -- FAA (2021)
   \item \textbf{Open Water Diver} -- PADI (2022)
 \end{itemize}
+}
 
 \end{document}
