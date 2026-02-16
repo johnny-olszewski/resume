@@ -70,11 +70,10 @@
   \noindent\textbf{#1} \hfill \textit{#2}
 }
 
-% \school{Name}{Degree}{Details}{Date Range} — education entry
-\newcommand{\school}[4]{%
+% \school{Name}{Degree}{Relevant Coursework} — education entry
+\newcommand{\school}[3]{%
   \vspace{0.4em}
-  \noindent\textbf{#1} \hfill \textsc{#4}\\
-  #2\\
+  \noindent\textbf{#1} \hfill #2\\
   #3
 }
 
@@ -84,87 +83,84 @@
 
 \name{Johnny Olszewski}
 
-\contact{johnolszewskim@gmail.com}{(203) 300-0973}{San Diego, CA}{linkedin.com/in/johnolszewskim}
+\contact{johnolszewskim@gmail.com}{(203) 300-0973}{San Diego, CA}{linkedin.com/in/johnny-olszewski-m/}
 
 \summary{
-After leaving the military I started in engineering to build a strong technical foundation but knew that's not where I would stay. As a product manager, I leverage that experience to balance engineering constraints and business goals to prioritize effort to achieve product outcomes. 
+After leaving the military, I started in engineering to build a strong technical foundation.
+I knew I would benefit from this technical experience even if I moved away from purely technical roles. 
+My strength as a product manager is leveraging that experience to understand engineering constraints; 
+then balancing those limitations with business goals to prioritize effort to achieve outcomes.
+Using my leadership experience from the military and technical experience from engineering, 
+I am equipped and excited to drive diverse impact in an effort to solve user problems.
 }
+
 % ---------------------------------------------------------------------------
 \section{Professional Experience}
 
+\vspace{0.4em}
+
 \role{Resmed}{San Diego, CA}{Project Manager (Secondment)}{Oct 2025 - Present}
 \begin{itemize}
-  \item Define product vision and desired outcomes for new team to support and implement mobile app experimentation platform for a XX.X patient population.
-  \item Manage stakeholder communications and expectations to prioritize developer effort across support for in-app experimentation, platform enhancements and maintenance and tech debt.
-  \item Manage and prioritize Jira backlog, generate product documentation, planning documents and other various products to share team progress and accomplishments.
+  \item Define product vision and desired outcomes for new team to support and implement a custom mobile app experimentation platform for a 3+ million active user population.
+  \item Manage stakeholder communications and expectations to prioritize developer effort across work streams including support for in-app experimentation, platform enhancements and maintenance and tech debt.
+  \item Oversee and prioritize Jira backlog, generate product documentation, planning documents and other various products to share team progress and accomplishments.
 \end{itemize}
+
+\vspace{0.4em}
 
 \role{Resmed}{San Diego, CA}{iOS Engineer}{Mar 2024 - Present}
 \begin{itemize}
   \item Develop, maintain and iterate on iOS app features using both UIKit and SwiftUI to achieve desired user experiences.
-  \item Integrate AWS AppSync, Amplify, GraphQL and implement features for real-time data sync between mobile clients, Resmed hardware and AWS services.
-  \item Utilize Swift Testing/XCTest and Cucumber, update and maintain GitHub Actions Workflows and modify tests for Fastlane screenshots.
+  \item Integrate AWS AppSync, Amplify, Apollo, GraphQL and implement features for real-time data sync between mobile clients, Resmed hardware and AWS services.
+  \item Utilize Swift Testing/XCTest and Cucumber tests, update and maintain GitHub Actions Workflows and modify tests for Fastlane screenshots.
   \item Collaborate with cross-functional Agile teams using Jira for sprint planning, Git/GitHub for version control, and conduct thorough code reviews to maintain high code quality standards.
   \item Implement secure, scalable solutions to protect patient data and ensure HIPAA compliance.
 \end{itemize}
 
-\role{Previous Company}{City, ST}{Job Title}{Jun 2020--Dec 2022}
+\vspace{0.4em}
+
+\role{Prize LLC}{Remote}{Founding Software Engineer}{Nov 2023 - May 2025}
 \begin{itemize}
-  \item Describe a key achievement or responsibility here.
-  \item Describe another accomplishment with measurable impact.
-  \item Mention relevant technologies, tools, or methodologies used.
+  \item Established engineering workflows and CI/CD pipelines using Docker and Kubernetes for container orchestration in cloud environments.
+  \item Architected full-stack applications using TypeScript, React, and a Django server with Neo4j database.
+  \item Drove technical decisions for scalable infrastructure management and data governance in a startup environment.
 \end{itemize}
 
-\role{Earlier Company}{City, ST}{Job Title}{Aug 2017--May 2020}
+\vspace{0.4em}
+
+\role{United States Marine Corps}{Various Locations}{Captain, F/A-18 Hornet Weapon Systems Officer (WSO)}{Jun 2017 - Feb 2024}
 \begin{itemize}
-  \item Describe a key achievement or responsibility here.
-  \item Describe another accomplishment with measurable impact.
+  \item Mastered, managed and employed weapons systems and capabilities of F/A-18D Hornet.
+  \item Facilitated qualifications and syllabus completion of replacement aircrew by using operations expertise to manage production as Flight Schedules Officer.
+  \item Managed occupational health and safety programs, identified hazards and implemented controls as Safety Officer for squadron of over 500 Marines and sailors.
 \end{itemize}
+
+\vspace{0.4em}
 
 % ---------------------------------------------------------------------------
-\section{Projects}
 
-\project{Project Name}{React, TypeScript, PostgreSQL}
-\begin{itemize}
-  \item Describe what the project does and the problem it solves.
-  \item Highlight technical decisions, architecture, or key features.
-\end{itemize}
-
-\project{Another Project}{Python, FastAPI, Docker}
-\begin{itemize}
-  \item Describe what the project does and the problem it solves.
-  \item Highlight technical decisions, architecture, or key features.
-\end{itemize}
-
-% ---------------------------------------------------------------------------
 \section{Education}
 
-\school{University Name}{M.S.\ Computer Science}{Relevant coursework or focus areas}{2021--2023}
+\vspace{0.4em}
 
-\school{Another University}{B.S.\ Computer Science}{Minor or honors}{2015--2019}
+\school{Virginia Tech}{M.S.\ Information Technology}{Software Engineering, Healthcare I.T., Cybersecurity Management}
+
+\school{University of Richmond}{B.A.\ Computer Science}{French Minor}
+
+\vspace{0.4em}
 
 % ---------------------------------------------------------------------------
-\section{Skills}
+\section{Technical Skills}
+
+\vspace{0.4em}
 
 \vspace{0.4em}
 {\small
 \begin{itemize}
-  \item \textbf{Languages:} JavaScript, TypeScript, Python, SQL, Java
-  \item \textbf{Frontend:} React, Next.js, Tailwind CSS
-  \item \textbf{Backend:} Node.js, FastAPI, Django, RESTful APIs
-  \item \textbf{Databases:} PostgreSQL, MySQL, Redis
-  \item \textbf{DevOps \& Tools:} Docker, CI/CD, Git, GitHub Actions
-\end{itemize}
-}
-
-% ---------------------------------------------------------------------------
-\section{Certifications}
-
-\vspace{0.4em}
-{\small
-\begin{itemize}
-  \item \textbf{Certification Name} -- Issuing Organization (Year)
-  \item \textbf{Another Certification} -- Issuing Organization (Year)
+  \item \textbf{Languages:} Swift, JavaScript, TypeScript, Python, SQL, Java
+  \item \textbf{Frontend:} SwiftUI, UIKit, React, Next.js, Tailwind CSS
+  \item \textbf{Backend:} Node.js, FastAPI, Django, RESTful APIs, GraphQL
+  \item \textbf{DevOps \& Tools:} Docker, CI/CD, Git, GitHub Actions, Cucumber, XCTest, AWS
 \end{itemize}
 }
 
