@@ -2,83 +2,121 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[margin=0.45in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{tabularx}
 
-% Chicago-style section headers (tighter spacing)
+% Section formatting
 \titleformat{\section}
   {\large\bfseries\uppercase}
   {}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{*0.6}{*0.1}
+\titlespacing*{\section}{0pt}{*0.8}{*0.2}
 
-% Global spacing tweaks
+% Global spacing
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{0pt}
 \linespread{0.95}
-\setlist[itemize]{leftmargin=0.8em, itemsep=0.05em, topsep=0.05em, parsep=0em, partopsep=0em}
+\setlist[itemize]{leftmargin=0.8em, itemsep=0.05em, topsep=0.1em, parsep=0em, partopsep=0em}
 
 % No page numbers
 \pagenumbering{gobble}
 
-% Template commands (compact)
-\newcommand{\name}[1]{
+% Hyperlink style (no colored boxes)
+\hypersetup{hidelinks}
+
+% ---------------------------------------------------------------------------
+% Custom macros
+% ---------------------------------------------------------------------------
+
+% \name{Name} — centered name with horizontal rule
+\newcommand{\name}[1]{%
   \begin{center}
     \Large\textbf{#1}
   \end{center}
   \vspace{-0.4em}
-  \hrule height 0.4pt width \textwidth
+  \hrule height 0.4pt
   \vspace{0.2em}
 }
-% Single-line contact
-\newcommand{\contact}[3]{
+
+% \contact{email}{phone}{location}{linkedin} — single-line contact info
+\newcommand{\contact}[4]{%
   \begin{center}
-    \small #1 \textbar{} #2 \textbar{} #3
+    \small #1 \textbar{} #2 \textbar{} #3 \textbar{} #4
   \end{center}
   \vspace{-0.35em}
-  \hrule height 0.4pt width \textwidth
+  \hrule height 0.4pt
   \vspace{0.2em}
 }
-% Compact role block; dates in small caps
-\newcommand{\role}[4]{
+
+% \summary{text} — professional summary block
+\newcommand{\summary}[1]{%
+  \vspace{-0.2em}
+  \begin{center}
+    \footnotesize\textit{#1}
+  \end{center}
+}
+
+% \role{Company}{Location}{Title}{Date Range} — job entry header
+\newcommand{\role}[4]{%
+  \vspace{0.4em}
   \noindent\textbf{#1} \hfill \textbf{#2}\\
   \noindent\textit{#3} \hfill \textsc{#4}
 }
 
-\begin{document}
+% \project{Name}{Tech Stack} — project entry header
+\newcommand{\project}[2]{%
+  \vspace{0.4em}
+  \noindent\textbf{#1} \hfill \textit{#2}
+}
 
-% Slightly smaller body text
+% \school{Name}{Degree}{Relevant Coursework} — education entry
+\newcommand{\school}[3]{%
+  \vspace{0.4em}
+  \noindent\textbf{#1} \hfill #2\\
+  #3
+}
+
+% ---------------------------------------------------------------------------
+\begin{document}
 \small
 
 \name{Johnny Olszewski}
 
-\contact{johnolszewskim@gmail.com \textbar{} (203) 300-0973}{San Diego, CA}{LinkedIn: johnny-olszewski-m}
+\contact{johnolszewskim@gmail.com}{(203) 300-0973}{San Diego, CA}{linkedin.com/in/johnny-olszewski-m/}
 
-\vspace{-0.2em}
-\begin{center}
-\footnotesize \textit{Full Stack Engineer and former Marine aviator. I'm passionate about how we can use technology to enhance our processes and solve problems. I enjoy building secure, dynamic software that is thoughtfully architected and easy to maintain. I want to be part of a high-performing team building something meaningful and impactful.}
-\end{center}
+\summary{
+  Product manager with an engineering foundation and leadership experience. 
+  Translates technical constraints into clear priorities in order to drive outcomes and solve user problems. 
+  Brings leadership experience and technical depth, delivering impact across product and engineering teams.
+}
 
-\section{PROFESSIONAL EXPERIENCE}
+% ---------------------------------------------------------------------------
+\section{Professional Experience}
 
 \vspace{0.4em}
-% ResMed
-\role{Resmed}{San Diego, CA}{Associate iOS Engineer}{March 2024--Present}
+
+\role{Resmed}{San Diego, CA}{Project Manager (Secondment)}{Oct 2025 - Present}
 \begin{itemize}
-  \item Develop and maintain features impacting 3.5M+ active users while migrating legacy UIKit to SwiftUI.
-  \item Integrate AWS AppSync, Amplify, GraphQL and implement features for real-time data sync between mobile clients, Resmed hardware and AWS services.
-  \item Utilize Swift Testing/XCTest and Cucumber tests to ensure high code quality standards. Update and maintain GitHub Actions Workflows. Modify tests for Fastlane screenshots.
-  \item Collaborate with cross-functional Agile teams using JIRA for sprint planning, Git/GitHub for version control, and conduct thorough code reviews to maintain high code quality standards.
-  \item Implement secure, scalable solutions following cloud best practices for data publishing and consumption in healthcare technology.
+  \item Define product vision and desired outcomes for new team to support and implement a custom mobile app experimentation platform for a 3+ million active user population.
+  \item Manage stakeholder communications and expectations to prioritize developer effort across work streams including support for in-app experimentation, platform enhancements, maintenance and tech debt.
+  \item Oversee and prioritize Jira backlog, generate product documentation, planning documents and other various products to share team progress and accomplishments.
 \end{itemize}
 
 \vspace{0.4em}
-% Prize LLC
-\role{Prize LLC}{Remote (Part-time)}{Founding Software Engineer}{November 2023--May 2025}
+
+\role{Resmed}{San Diego, CA}{iOS Engineer}{Mar 2024 - Present}
+\begin{itemize}
+  \item Develop, maintain and iterate on iOS app features using both UIKit and SwiftUI to achieve desired user experiences.
+  \item Integrate AWS AppSync, Amplify, Apollo, GraphQL and implement features for real-time data sync between mobile clients, Resmed hardware and AWS services.
+  \item Utilize Swift Testing/XCTest and Cucumber tests, update and maintain GitHub Actions Workflows and modify tests for Fastlane screenshots.
+  \item Collaborate with cross-functional Agile teams using Jira for sprint planning, Git/GitHub for version control, and conduct thorough code reviews to maintain high code quality standards.
+  \item Implement secure, scalable solutions to protect patient data and ensure HIPAA compliance.
+\end{itemize}
+
 \vspace{0.4em}
+
+\role{Prize LLC}{Remote}{Founding Software Engineer}{Nov 2023 - May 2025}
 \begin{itemize}
   \item Established engineering workflows and CI/CD pipelines using Docker and Kubernetes for container orchestration in cloud environments.
   \item Architected full-stack applications using TypeScript, React, and a Django server with Neo4j database.
@@ -86,10 +124,8 @@
 \end{itemize}
 
 \vspace{0.4em}
-% USMC
-\vspace{0.4em}
-\role{United States Marine Corps}{Various Locations}{Captain, F/A-18 Hornet Weapon Systems Officer (WSO), Naval Flight Officer (NFO)}{June 2017--February 2024}
-\vspace{0.4em}
+
+\role{United States Marine Corps}{Various Locations}{Captain, F/A-18 Hornet Weapon Systems Officer (WSO)}{Jun 2017 - Feb 2024}
 \begin{itemize}
   \item Mastered, managed and employed weapons systems and capabilities of F/A-18D Hornet.
   \item Facilitated qualifications and syllabus completion of replacement aircrew by using operations expertise to manage production as Flight Schedules Officer.
@@ -98,62 +134,30 @@
 
 \vspace{0.4em}
 
-\section{PROJECTS}
+% ---------------------------------------------------------------------------
 
-\vspace{0.4em}
-{\small
-\noindent\textbf{Finance.ai -- Full Stack Data Management Platform}
-\vspace{0.4em}
-\begin{itemize}
-  \item Develop a privacy-focused personal finance platform enabling secure transaction tracking and budget management through a fast, customizable interface.
-  \item \textbf{Front-end:} Build responsive React/TypeScript frontends with Redux Toolkit, Tailwind CSS, and Material-UI, featuring real-time filtering and Supabase integration.
-  \item \textbf{Back-end:} Design RESTful APIs with FastAPI/Python and PostgreSQL, implementing modular service-oriented architecture for data management.
-  \item \textbf{Infrastructure \& DevOps:} Deploy to Google Cloud Run and Cloudflare. Implement CI/CD pipelines using GitHub Actions and Docker.
-\end{itemize}
-}
-
-\vspace{0.4em}
-\section{EDUCATION}
-\vspace{0.4em}
-
-% Left-aligned schools with small-caps dates
-\vspace{0.4em}
-{\small
-\noindent\textbf{Virginia Tech} \hfill \textsc{2021--2023}\\
-M.S. Information Technology\\
-Software Engineering, Healthcare I.T., Cybersecurity Management
+\section{Education}
 
 \vspace{0.4em}
 
-\noindent\textbf{University of Richmond} \hfill \textsc{2012--2016}\\
-B.A. Computer Science\\
-French Minor
-}
-\vspace{0.4em}
+\school{Virginia Tech}{M.S.\ Information Technology}{Software Engineering, Healthcare I.T., Cybersecurity Management}
 
-\section{SKILLS}
+\school{University of Richmond}{B.A.\ Computer Science}{French Minor}
 
 \vspace{0.4em}
-{\small
-\vspace{0.4em}
-\begin{itemize}
-  \item \textbf{Programming Languages:} JavaScript, TypeScript, Python, Java, SQL, Swift
-  \item \textbf{Frontend Technologies:} React, React Native, SwiftUI, UIKit, Next.js, Redux, Material-UI, Tailwind CSS
-  \item \textbf{Backend Technologies:} Node.js, FastAPI, Django, RESTful APIs
-  \item \textbf{Databases:} PostgreSQL, MySQL, NoSQL (Neo4j, DynamoDB)
-  \item \textbf{DevOps \& Tools:} CI/CD, Git, GitHub, JIRA, Agile/Scrum
-\end{itemize}
-}
+
+% ---------------------------------------------------------------------------
+\section{Technical Skills}
 
 \vspace{0.4em}
-\section{CERTIFICATIONS}
 
 \vspace{0.4em}
 {\small
 \begin{itemize}
-  \item \textbf{Security Clearance:} Previously held Secret clearance (U.S. Marine Corps)
-  \item \textbf{Private Pilot Certificate} -- FAA (2021)
-  \item \textbf{Open Water Diver} -- PADI (2022)
+  \item \textbf{Languages:} Swift, JavaScript, TypeScript, Python, SQL, Java
+  \item \textbf{Frontend:} SwiftUI, UIKit, React, Next.js, Tailwind CSS
+  \item \textbf{Backend:} Node.js, FastAPI, Django, RESTful APIs, GraphQL
+  \item \textbf{DevOps \& Tools:} Docker, CI/CD, Git, GitHub Actions, Cucumber, XCTest, AWS
 \end{itemize}
 }
 
